@@ -1,6 +1,9 @@
 package com.example.ticket_system.controllers.rest;
 
+import com.example.ticket_system.DTO.UpdateAssignedUserDTO;
+import com.example.ticket_system.DTO.UpdatePriorityDTO;
 import com.example.ticket_system.entities.Ticket;
+import com.example.ticket_system.enums.TicketStatus;
 import com.example.ticket_system.repositories.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -45,9 +48,28 @@ public class WebController {
         if (ticket.getPriority() <= 0)
             return ResponseEntity.badRequest().body("Please enter a valid priority");
         if (ticket.getAssigned_user_id() == 0)
-            ticket.setStatus("Unassigned");
+            ticket.setStatus(TicketStatus.TO_BE_ASSIGNED);
         else
-            ticket.setStatus("Assigned");
+            ticket.setStatus(TicketStatus.OPEN);
         return ResponseEntity.ok(ticketRepository.save(ticket));
+    }
+    @PatchMapping({"/update/{id}/priority"})
+    public ResponseEntity<?> UpdatePriority(@PathVariable int id, @RequestBody UpdatePriorityDTO updatePriorityDTO){
+        Optional<Ticket> ticket = ticketRepository.findById(id);
+        if (ticket.isEmpty()){
+            return ResponseEntity.badRequest().body("Ticket not found");
+        }
+        ticket.get().setPriority(updatePriorityDTO.getPriority());
+        return ResponseEntity.ok(ticketRepository.save(ticket.get()));
+    }
+
+    @PatchMapping({"/update/{id}/assigned_user"})
+    public ResponseEntity<?> UpdateAssignedUSer(@PathVariable int id, @RequestBody UpdateAssignedUserDTO updateAssignedUserDTO){
+        Optional<Ticket> ticket = ticketRepository.findById(id);
+        if (ticket.isEmpty()){
+            return ResponseEntity.badRequest().body("Ticket not found");
+        }
+        ticket.get().setAssigned_user_id(updateAssignedUserDTO.getUserId());
+        return ResponseEntity.ok(ticketRepository.save(ticket.get()));
     }
 }

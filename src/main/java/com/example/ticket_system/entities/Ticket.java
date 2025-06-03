@@ -1,5 +1,6 @@
 package com.example.ticket_system.entities;
 
+import com.example.ticket_system.enums.TicketStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,8 @@ public class Ticket {
     private String title;
     private String description;
     private int priority;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TicketStatus status;
     private int assigned_user_id;
 
 
