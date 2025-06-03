@@ -1,0 +1,40 @@
+﻿<Window x:Class="Ticket_system_window.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ticket_system_window"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <!-- Tite -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center">Title:</TextBlock>
+        <TextBox Name="titleTB" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <!-- Description -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center">Description:</TextBlock>
+        <TextBox Name="descriptionTB" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <!-- Priority -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center">Priority:</TextBlock>
+        <TextBox Name="priorityTB" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <!-- Submit Button -->
+        <Button Grid.Row="4" Grid.Column="1" Margin="5" Content="Submit" HorizontalAlignment="Center" Height="50" Width="100" Click="onClickSubmit"/>
+    </Grid>
+</Window>

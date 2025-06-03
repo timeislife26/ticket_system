@@ -14,10 +14,12 @@ public class Ticket {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
+    private int created_user_id;
     private String title;
     private String description;
     private int priority;
     private String status;
     private int assigned_user_id;
+
 
 }

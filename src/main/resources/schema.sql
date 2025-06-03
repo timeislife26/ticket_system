@@ -4,5 +4,6 @@ CREATE TABLE tickets (
                       description VARCHAR(255) NOT NULL,
                       priority int NOT NULL,
                       status VARCHAR(255) NOT NULL,
-                      assigned_user_id INT
+                      assigned_user_id INT,
+                      created_user_id INT
 );

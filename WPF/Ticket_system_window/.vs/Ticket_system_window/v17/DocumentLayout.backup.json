@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jflem\\Documents\\Coding_Projects\\Projects\\Java\\ticket_system\\WPF\\Ticket_system_window\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFCFC0D0-EEF1-4968-B67B-EE521898BC88}|Ticket_system_window\\Ticket_system_window.csproj|c:\\users\\jflem\\documents\\coding_projects\\projects\\java\\ticket_system\\wpf\\ticket_system_window\\ticket_system_window\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFCFC0D0-EEF1-4968-B67B-EE521898BC88}|Ticket_system_window\\Ticket_system_window.csproj|solutionrelative:ticket_system_window\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFCFC0D0-EEF1-4968-B67B-EE521898BC88}|Ticket_system_window\\Ticket_system_window.csproj|c:\\users\\jflem\\documents\\coding_projects\\projects\\java\\ticket_system\\wpf\\ticket_system_window\\ticket_system_window\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AFCFC0D0-EEF1-4968-B67B-EE521898BC88}|Ticket_system_window\\Ticket_system_window.csproj|solutionrelative:ticket_system_window\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\jflem\\Documents\\Coding_Projects\\Projects\\Java\\ticket_system\\WPF\\Ticket_system_window\\Ticket_system_window\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Ticket_system_window\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\jflem\\Documents\\Coding_Projects\\Projects\\Java\\ticket_system\\WPF\\Ticket_system_window\\Ticket_system_window\\MainWindow.xaml",
+              "RelativeToolTip": "Ticket_system_window\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-31T11:31:06.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jflem\\Documents\\Coding_Projects\\Projects\\Java\\ticket_system\\WPF\\Ticket_system_window\\Ticket_system_window\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Ticket_system_window\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\jflem\\Documents\\Coding_Projects\\Projects\\Java\\ticket_system\\WPF\\Ticket_system_window\\Ticket_system_window\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Ticket_system_window\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T11:31:02.944Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
