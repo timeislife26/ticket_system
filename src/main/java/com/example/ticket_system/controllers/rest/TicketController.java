@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.Optional;
 
 @RestController
-public class WebController {
+public class TicketController {
     @Autowired
     private MessageSource messageSource;
     @Autowired

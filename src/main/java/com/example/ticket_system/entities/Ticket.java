@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Ticket {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    private int ticketId;
     private int created_user_id;
     private String title;
     private String description;
