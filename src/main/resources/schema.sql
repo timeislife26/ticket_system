@@ -3,7 +3,7 @@
 CREATE TABLE department(
                     department_code INT AUTO_INCREMENT PRIMARY KEY,
                     department_name VARCHAR(255) NOT NULL,
-                    department_head_id INT
+                    department_head INT
 );
 
 CREATE TABLE users (
@@ -26,19 +26,19 @@ CREATE TABLE user_roles (
 );
 
 CREATE TABLE tickets (
-                      ticketId INT AUTO_INCREMENT PRIMARY KEY,
+                      ticket_id INT AUTO_INCREMENT PRIMARY KEY,
                       title VARCHAR(255) NOT NULL,
                       description VARCHAR(255) NOT NULL,
                       priority INT NOT NULL,
                       status VARCHAR(255) NOT NULL,
-                      assigned_user_id INT,
+                      assigned_user INT,
                       created_user_id INT,
                       CONSTRAINT fk_tickets_created_user
                         FOREIGN KEY (created_user_id) REFERENCES users(user_id),
                       CONSTRAINT fk_tickets_assigned_user
-                        FOREIGN KEY (assigned_user_id) REFERENCES users(user_id)
+                        FOREIGN KEY (assigned_user) REFERENCES users(user_id)
 );
 
 ALTER TABLE department
   ADD CONSTRAINT fk_department_head
-  FOREIGN KEY (department_head_id) REFERENCES users(user_id);
+  FOREIGN KEY (department_head) REFERENCES users(user_id);

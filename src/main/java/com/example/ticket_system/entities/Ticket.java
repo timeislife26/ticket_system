@@ -15,13 +15,15 @@ public class Ticket {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int ticketId;
-    private int created_user_id;
+    private int createdUserId;
     private String title;
     private String description;
     private int priority;
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
-    private int assigned_user_id;
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "assigned_user", referencedColumnName = "user_id")
+    private User assignedUser;
 
 
 }

@@ -1,6 +1,8 @@
 package com.example.ticket_system.entities;
 
 import com.example.ticket_system.enums.UserRoles;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,7 +32,7 @@ public class User {
     @Column(name = "role", length = 32, nullable = false)
     private Set<UserRoles> roles = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_code", referencedColumnName = "department_code")
     private Department department;
 }
