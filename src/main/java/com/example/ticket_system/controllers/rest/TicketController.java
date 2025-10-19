@@ -9,6 +9,7 @@ import com.example.ticket_system.enums.TicketStatus;
 import com.example.ticket_system.mappers.TicketDTOMapper;
 import com.example.ticket_system.repositories.TicketRepository;
 import com.example.ticket_system.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.ResponseEntity;
@@ -20,20 +21,16 @@ import java.util.Locale;
 import java.util.Optional;
 
 @RestController
+@RequiredArgsConstructor
 public class TicketController {
 
 
 
-    @Autowired
-    private MessageSource messageSource;
-    @Autowired
-    private TicketRepository ticketRepository;
+    private final MessageSource messageSource;
+    private final TicketRepository ticketRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    private UserRepository userRepository;
 
-    @Autowired
-    private TicketDTOMapper ticketDTOMapper;
 
 
 
