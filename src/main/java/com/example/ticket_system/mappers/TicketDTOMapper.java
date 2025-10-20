@@ -10,15 +10,16 @@ public class TicketDTOMapper{
     public TicketDTOMapper(){}
 
     public static TicketDTO toDto(Ticket t) {
-        Integer uid = (t.getAssignedUser() != null) ? t.getAssignedUser().getUserId() : null;
+        int createdUid = t.getCreatedUser().getUserId();
+        int assignedUid = (t.getAssignedUser() != null) ? t.getAssignedUser().getUserId() : null;
         return new TicketDTO(
                 t.getTicketId(),
-                t.getCreatedUserId(),
+                createdUid,
                 t.getTitle(),
                 t.getDescription(),
                 t.getPriority(),
                 t.getStatus().name(),
-                uid
+                assignedUid
         );
     }
 

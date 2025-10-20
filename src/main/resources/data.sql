@@ -11,7 +11,7 @@ INSERT INTO users (forename, surname, email, password_hash, department_code) VAL
 UPDATE department SET department_head = 1 WHERE department_code = 1;
 UPDATE department SET department_head = 3 WHERE department_code = 2;
 
-INSERT INTO tickets (title, description, priority, status, assigned_user, created_user_id) VALUES
+INSERT INTO tickets (title, description, priority, status, assigned_user, created_user) VALUES
 ('Test', 'Testing a Ticket', 1, 'IN_PROGRESS', 2 , 1),
 ('Unassigned Ticket', 'A ticket with no assigned user', 2, 'TO_BE_ASSIGNED', 1 , 3),
 ('Sales Assigned Ticket', 'A ticket just assigned', 2, 'OPEN', 2 , 3);

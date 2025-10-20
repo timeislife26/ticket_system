@@ -66,7 +66,7 @@ public class TicketController {
 
     @PostMapping({"/create"})
     public ResponseEntity<?> CreateTicket(@RequestBody Ticket ticket, Locale locale){
-        if (ticket.getCreatedUserId() <= 0)
+        if (ticket.getCreatedUser().getUserId() <= 0)
             return ResponseEntity.badRequest().body(messageSource.getMessage("noTicketID", null, locale));
         if (ticket.getTitle() == null || ticket.getTitle().isEmpty())
             return ResponseEntity.badRequest().body(messageSource.getMessage("noTicketTitle", null, locale));

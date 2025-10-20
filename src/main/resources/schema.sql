@@ -32,9 +32,9 @@ CREATE TABLE tickets (
                       priority INT NOT NULL,
                       status VARCHAR(255) NOT NULL,
                       assigned_user INT,
-                      created_user_id INT,
+                      created_user INT,
                       CONSTRAINT fk_tickets_created_user
-                        FOREIGN KEY (created_user_id) REFERENCES users(user_id),
+                        FOREIGN KEY (created_user) REFERENCES users(user_id),
                       CONSTRAINT fk_tickets_assigned_user
                         FOREIGN KEY (assigned_user) REFERENCES users(user_id)
 );

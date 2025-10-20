@@ -15,15 +15,20 @@ public class Ticket {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int ticketId;
-    private int createdUserId;
     private String title;
     private String description;
     private int priority;
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "created_user", referencedColumnName = "user_id")
+    private User createdUser;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "assigned_user", referencedColumnName = "user_id")
     private User assignedUser;
+
 
 
 }
