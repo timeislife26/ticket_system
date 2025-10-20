@@ -15,5 +15,8 @@ public class Department {
     @Column(name = "department_code")
     private int departmentCode;
     private String departmentName;
-    private int departmentHead;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "department_head", referencedColumnName = "user_id")
+    private User departmentHead;
 }
