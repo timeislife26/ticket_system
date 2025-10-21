@@ -26,7 +26,7 @@ public class Ticket {
     private User createdUser;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn(name = "assigned_user", referencedColumnName = "user_id")
+    @JoinColumn(name = "assigned_user", referencedColumnName = "user_id", nullable = true)
     private User assignedUser;
 
 

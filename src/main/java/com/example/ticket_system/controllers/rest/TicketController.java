@@ -64,10 +64,12 @@ public class TicketController {
     }
 
 
-    @PostMapping({"/create"})
+    @PostMapping({"/ticket/create"})
     public ResponseEntity<?> CreateTicket(@RequestBody Ticket ticket, Locale locale){
         if (ticket.getCreatedUser().getUserId() <= 0)
             return ResponseEntity.badRequest().body(messageSource.getMessage("noTicketID", null, locale));
+        Optional<User> user = userRepository.findById(ticket.getCreatedUser().getUserId());
+        ticket.setCreatedUser(user.get());
         if (ticket.getTitle() == null || ticket.getTitle().isEmpty())
             return ResponseEntity.badRequest().body(messageSource.getMessage("noTicketTitle", null, locale));
         if (ticket.getTitle().length() > 50)
@@ -76,10 +78,10 @@ public class TicketController {
             return ResponseEntity.badRequest().body(messageSource.getMessage("noTicketDescription", null, locale));
         if (ticket.getPriority() <= 0)
             return ResponseEntity.badRequest().body(messageSource.getMessage("badTicketPriority", null, locale));
-        if (ticket.getAssignedUser().getUserId() == 0)
-            ticket.setStatus(TicketStatus.TO_BE_ASSIGNED);
-        else
+        if (ticket.getAssignedUser() != null)
             ticket.setStatus(TicketStatus.OPEN);
+        else
+            ticket.setStatus(TicketStatus.TO_BE_ASSIGNED);
         return ResponseEntity.ok(ticketRepository.save(ticket));
     }
     @PatchMapping({"/update/{id}/priority"})

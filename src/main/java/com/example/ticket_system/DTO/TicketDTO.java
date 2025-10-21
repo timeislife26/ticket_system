@@ -7,6 +7,6 @@ public record TicketDTO(
         String description,
         int priority,
         String status,
-        int assignedUser
+        Integer assignedUser
 ) {
 }

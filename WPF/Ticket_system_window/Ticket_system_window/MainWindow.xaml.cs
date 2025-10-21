@@ -31,7 +31,7 @@ namespace Ticket_system_window
 
             var ticket = new
             {
-                created_user_id = 5, //int.TryParse(userId, out var id) ? id : 0,
+                createdUser = new { userId = 1 }, //int.TryParse(userId, out var id) ? id : 0,
                 title = title,
                 description = description,
                 priority = int.TryParse(priority, out var p) ? p : 0,
@@ -44,7 +44,7 @@ namespace Ticket_system_window
 
             try
             {
-                var response = await client.PostAsync("http://localhost:8080/create", content);
+                var response = await client.PostAsync("http://localhost:8080/ticket/create", content);
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Ticket submitted successfully!");
