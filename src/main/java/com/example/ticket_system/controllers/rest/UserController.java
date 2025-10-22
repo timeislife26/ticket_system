@@ -1,6 +1,7 @@
 package com.example.ticket_system.controllers.rest;
 
 import com.example.ticket_system.DTO.UserDTO;
+import com.example.ticket_system.entities.Department;
 import com.example.ticket_system.entities.User;
 import com.example.ticket_system.mappers.UserDTOMapper;
 import com.example.ticket_system.repositories.UserRepository;
@@ -34,6 +35,23 @@ public class UserController {
                 user.getSurname(),
                 user.getEmail(),
                 user.getDepartment().getDepartmentName()
+        );
+    }
+
+    @GetMapping("/users/head")
+    public UserDTO getUserHead(){
+        //For testing
+        User loggedinUser = userRepository.findById(2).get();
+
+        //Actual function
+        Department depatment = loggedinUser.getDepartment();
+        User departmentHead = depatment.getDepartmentHead();
+        return new UserDTO(
+                departmentHead.getUserId(),
+                departmentHead.getForename(),
+                departmentHead.getSurname(),
+                departmentHead.getEmail(),
+                departmentHead.getDepartment().getDepartmentName()
         );
     }
 }
