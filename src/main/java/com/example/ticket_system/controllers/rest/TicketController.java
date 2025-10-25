@@ -84,7 +84,7 @@ public class TicketController {
             ticket.setStatus(TicketStatus.TO_BE_ASSIGNED);
         return ResponseEntity.ok(ticketRepository.save(ticket));
     }
-    @PatchMapping({"/update/{id}/priority"})
+    @PatchMapping({"/ticket/update/{id}/priority"})
     public ResponseEntity<?> UpdatePriority(@PathVariable int id, @RequestBody UpdatePriorityDTO updatePriorityDTO, Locale locale){
         Optional<Ticket> ticket = ticketRepository.findById(id);
         if (ticket.isEmpty()){
@@ -94,7 +94,7 @@ public class TicketController {
         return ResponseEntity.ok(ticketRepository.save(ticket.get()));
     }
 
-    /*@PatchMapping({"/update/{id}/assigned_user"})
+    @PatchMapping({"/ticket/update/{id}/assigneduser"})
     public ResponseEntity<?> UpdateAssignedUser(@PathVariable int id, @RequestBody UpdateAssignedUserDTO updateAssignedUserDTO, Locale locale){
         Optional<Ticket> ticket = ticketRepository.findById(id);
         if (ticket.isEmpty()){
@@ -106,7 +106,7 @@ public class TicketController {
         else
             ticket.get().setAssignedUser(aUser.get());
         return ResponseEntity.ok(ticketRepository.save(ticket.get()));
-    }*/
+    }
 
 
 }

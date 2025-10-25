@@ -3,6 +3,7 @@ package com.example.ticket_system.controllers.rest;
 import com.example.ticket_system.DTO.UserDTO;
 import com.example.ticket_system.entities.Department;
 import com.example.ticket_system.entities.User;
+import com.example.ticket_system.enums.UserRoles;
 import com.example.ticket_system.mappers.UserDTOMapper;
 import com.example.ticket_system.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
@@ -53,5 +56,19 @@ public class UserController {
                 departmentHead.getEmail(),
                 departmentHead.getDepartment().getDepartmentName()
         );
+    }
+
+    @GetMapping("/users/myRoles")
+    public Set<UserRoles> getMyRoles(){
+        //For testing
+        User loggedinUser = userRepository.findById(2).get();
+
+        //Actual Function
+        return loggedinUser.getRoles();
+    }
+    @GetMapping("/users/{id}/roles")
+    public Set<UserRoles> getUserRoles(@PathVariable int id){
+        Optional<User> user = userRepository.findById(id);
+        return user.get().getRoles();
     }
 }
